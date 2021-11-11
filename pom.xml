@@ -12,6 +12,7 @@
     <modules>
         <module>log-spammer</module>
         <module>jetty-greeter</module>
+        <module>camel-design</module>
     </modules>
 
     <properties>
@@ -31,13 +32,6 @@
                 <version>${camel.version}</version>
             </dependency>
 
-            <!-- Jetty -->
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-jetty</artifactId>
-                <version>${camel.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.apache.camel.karaf</groupId>
                 <artifactId>camel-blueprint</artifactId>
@@ -54,6 +48,13 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+
+            <!-- Jetty -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jetty</artifactId>
+                <version>${camel.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
