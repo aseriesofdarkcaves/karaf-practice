@@ -9,7 +9,8 @@
 
     <cm:property-placeholder persistent-id="com.asodc.karaf.CamelDesign" update-strategy="reload">
         <cm:default-properties>
-            <cm:property name="test" value="test" />
+            <cm:property name="bodyRouteA" value="BODY SET IN ROUTE A!" />
+            <cm:property name="bodyRouteB" value="BODY SET IN ROUTE B!" />
         </cm:default-properties>
     </cm:property-placeholder>
 

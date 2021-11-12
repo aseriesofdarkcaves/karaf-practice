@@ -8,7 +8,7 @@ public class RouteBuilderB extends RouteBuilder {
     @Override
     public void configure() {
         from(INPUT)
-                .setBody().constant("ROUTE B")
+                .setBody().constant("{{bodyRouteB}}")
                 .log("${body}");
     }
 }
