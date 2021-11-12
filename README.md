@@ -32,3 +32,8 @@ feature:install camel
 
 - The `persistent-id` attribute value in the `property-placeholder` element shouldn't have a `.cfg` suffix.
 - If you set `update-strategy` to `reload`, the bundle automatically picks up and applies changes to the `cfg` file.
+
+### camel-karaf-maven-plugin
+
+- To use `mvn camel-karaf:run` you first need to `mvn install` the module.
+- Changes **won't** be automatically detected, so you need to make sure you run `mvn install` again.
