@@ -26,6 +26,20 @@ feature:install camel
 
 ---
 
+## Hawtio in Karaf
+
+https://hawt.io/
+https://github.com/hawtio/hawtio
+
+```shell
+feature:repo-add hawtio 2.14.1
+feature:install hawtio
+```
+
+You should be able to access the web frontend via http://localhost:8181/hawtio with login and username `karaf`.
+
+---
+
 ## Tips & Gotchas
 
 ### Blueprint XML
