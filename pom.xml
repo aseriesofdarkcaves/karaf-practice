@@ -110,6 +110,7 @@
                 </plugin>
 
                 <!-- to run the example using mvn camel-karaf:run -->
+                <!-- see https://github.com/apache/camel-karaf/blob/main/tooling/camel-karaf-maven-plugin/src/main/docs/camel-karaf-maven-plugin.adoc -->
                 <plugin>
                     <groupId>org.apache.camel.karaf</groupId>
                     <artifactId>camel-karaf-maven-plugin</artifactId>
