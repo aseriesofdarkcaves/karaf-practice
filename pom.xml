@@ -13,10 +13,12 @@
         <module>log-spammer</module>
         <module>jetty-greeter</module>
         <module>camel-design</module>
+        <module>property-encryption</module>
     </modules>
 
     <properties>
         <camel.version>3.11.3</camel.version>
+        <jaas.version>4.3.3</jaas.version>
         <log4j.version>2.13.3</log4j.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -48,6 +50,25 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+
+            <!-- Jasypt -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jasypt</artifactId>
+                <version>${camel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.karaf.jaas</groupId>
+                <artifactId>org.apache.karaf.jaas.jasypt</artifactId>
+                <version>${jaas.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.karaf.jaas</groupId>
+                <artifactId>org.apache.karaf.jaas.boot</artifactId>
+                <version>${jaas.version}</version>
             </dependency>
 
             <!-- Jetty -->
