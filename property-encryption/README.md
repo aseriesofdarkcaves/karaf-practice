@@ -75,6 +75,7 @@ camel-karaf:run -DCAMEL_ENCRYPTION_PASSWORD=secret -f pom.xml
 Using a Java system property requires using the following syntax in the blueprint XML file:
 
 ```xml
+
 <property name="password" value="sys:CAMEL_ENCRYPTION_PASSWORD"/>
 ```
 
@@ -93,6 +94,7 @@ for me.
 Using an environment variable requires using the following syntax in the blueprint XML file:
 
 ```xml
+
 <property name="password" value="sysenv:CAMEL_ENCRYPTION_PASSWORD"/>
 ```
 
@@ -101,3 +103,17 @@ You should unset the environment variable after the application has been started
 ```shell
 unset CAMEL_ENCRYPTION_PASSWORD
 ```
+
+### Deployment in Karaf
+
+#### System property
+
+- Karaf is stopped.
+- Edit `etc/system.properties` to add `CAMEL_ENCRYPTION_PASSWORD=secret`.
+- Start Karaf.
+- Edit `etc/system` to remove `CAMEL_ENCRYPTION_PASSWORD=secret`.
+- If the Karaf application is stopped, the steps above need to be carried out again.
+
+#### Environment variable
+
+- TODO

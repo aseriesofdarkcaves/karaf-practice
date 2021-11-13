@@ -19,9 +19,9 @@
     <!-- define the jasypt properties parser with the given password to be used -->
     <bean id="jasypt" class="org.apache.camel.component.jasypt.JasyptPropertiesParser">
         <!-- This gets the master password from an environment variable -->
-        <property name="password" value="sysenv:CAMEL_ENCRYPTION_PASSWORD"/>
+<!--        <property name="password" value="sysenv:CAMEL_ENCRYPTION_PASSWORD"/>-->
         <!-- This gets the master password from a system property -->
-<!--        <property name="password" value="sys:CAMEL_ENCRYPTION_PASSWORD"/>-->
+        <property name="password" value="sys:CAMEL_ENCRYPTION_PASSWORD"/>
     </bean>
 
     <!-- CamelContext and routeBuilder injection -->
