@@ -62,13 +62,25 @@ command to prevent it being captured in the history.
  java -cp jasypt-1.9.3.jar:camel-jasypt-3.11.3.jar org.apache.camel.component.jasypt.Main -c encrypt -p secret -i tiger
 ```
 
-## Using an environment variable to store the master password
+## Injecting the master password into the application
 
-Java needs to be able to see the environment variable - so the variable needs to be added for the user that runs
-the `java` command, or system-wide.
+### Using a Java system property
 
-Remember that the plaintext password will be in your command-line history, so place a [space] character before the
-command to prevent it being captured in the history.
+Pass the system property via the command-line:
+
+```shell
+camel-karaf:run -DCAMEL_ENCRYPTION_PASSWORD=secret -f pom.xml
+```
+
+Using a Java system property requires using the following syntax in the blueprint XML file:
+
+```xml
+<property name="password" value="sys:CAMEL_ENCRYPTION_PASSWORD"/>
+```
+
+### Using an environment variable to store the master password
+
+Place a [space] character before the command to prevent it being captured in the history.
 
 ```shell
 # Note the first character is a space to prevent the password being captured in history
@@ -78,7 +90,13 @@ command to prevent it being captured in the history.
 If the password is captured by history then you can remove it by editing the history file. `history -d id` didn't work
 for me.
 
-You should probably unset it afterwards too.
+Using an environment variable requires using the following syntax in the blueprint XML file:
+
+```xml
+<property name="password" value="sysenv:CAMEL_ENCRYPTION_PASSWORD"/>
+```
+
+You should unset the environment variable after the application has been started:
 
 ```shell
 unset CAMEL_ENCRYPTION_PASSWORD
