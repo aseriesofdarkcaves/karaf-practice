@@ -51,3 +51,7 @@ You should be able to access the web frontend via http://localhost:8181/hawtio w
 
 - To use `mvn camel-karaf:run` you first need to `mvn install` the module.
 - Changes **won't** be automatically detected, so you need to make sure you run `mvn install` again.
+
+## Random interesting links
+- https://capgemini.github.io/java/cleaning-the-camel/
+- https://hawt.io/
