@@ -55,3 +55,5 @@ You should be able to access the web frontend via http://localhost:8181/hawtio w
 ## Random interesting links
 - https://capgemini.github.io/java/cleaning-the-camel/
 - https://hawt.io/
+- https://karaf.apache.org/manual/latest/#_passwords_encryption
+- https://activemq.apache.org/encrypted-passwords
