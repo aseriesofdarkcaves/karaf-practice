@@ -1,6 +1,6 @@
 # karaf-practice
 
-A repo for gathering all the weird shit I learn about Apache Karaf.
+A repo for gathering all the studd I learn about Apache Karaf.
 
 - JDK 11
 - apache-karaf-4.2.12
