@@ -55,9 +55,13 @@ In this example, we want to encrypt the application password `tiger` using the m
 settings.
 
 Remember that the plaintext password will be in your command-line history, so place a [space] character before the
-command to prevent it being captured in the history.
+command to prevent it being captured in the history. You might have to activate this feature if you're using `zsh`.
 
 ```shell
+# If you're using zsh, you might want to make sure you have this set to activate the option for ignoring commands
+# starting with a space char 
+setopt HIST_IGNORE_SPACE
+
 # Note the first character is a space to prevent the password being captured in history
  java -cp jasypt-1.9.3.jar:camel-jasypt-3.11.3.jar org.apache.camel.component.jasypt.Main -c encrypt -p secret -i tiger
 ```
@@ -81,9 +85,14 @@ Using a Java system property requires using the following syntax in the blueprin
 
 ### Using an environment variable to store the master password
 
-Place a [space] character before the command to prevent it being captured in the history.
+Place a [space] character before the command to prevent it being captured in the history. You might have to activate
+this feature if you're using `zsh`.
 
 ```shell
+# If you're using zsh, you might want to make sure you have this set to activate the option for ignoring commands
+# starting with a space char 
+setopt HIST_IGNORE_SPACE
+
 # Note the first character is a space to prevent the password being captured in history
  export CAMEL_ENCRYPTION_PASSWORD=secret
 ```
@@ -116,4 +125,11 @@ unset CAMEL_ENCRYPTION_PASSWORD
 
 #### Environment variable
 
-- TODO
+- Karaf is stopped.
+- Set an environment variable with the key `CAMEL_ENCRYPTION_PASSWORD` which matches that given in the `blueprint.xml`
+  file, setting its value to `secret`.
+- Start Karaf.
+- Ensure the bundle using the encrypted password has started.
+- Unset the `CAMEL_ENCRYPTION_PASSWORD` environment variable.
+- If the Karaf application is stopped, the steps above need to be carried out again.
+    - TODO: check what happens if the bundle is stopped/uninstalled then started/reinstalled.
