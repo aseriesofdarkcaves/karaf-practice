@@ -120,7 +120,7 @@ unset CAMEL_ENCRYPTION_PASSWORD
 - Karaf is stopped.
 - Edit `etc/system.properties` to add `CAMEL_ENCRYPTION_PASSWORD=secret`.
 - Start Karaf.
-- Edit `etc/system` to remove `CAMEL_ENCRYPTION_PASSWORD=secret`.
+- Edit `etc/system.properties` to remove `CAMEL_ENCRYPTION_PASSWORD=secret`.
 - If the Karaf application is stopped, the steps above need to be carried out again.
 
 #### Environment variable
